@@ -7,10 +7,3 @@ variable "bucket_name" {
   type = string
 }
 
-variable "vpcs" {
-  type = map(object({
-    account_id = string
-    region     = string
-    vpc_id     = string
-  }))
-}
