@@ -1,4 +1,4 @@
-name: Terraform Init
+name: Terraform-Workflow
 
 on:
   push:
