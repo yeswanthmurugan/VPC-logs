@@ -1,11 +1,21 @@
-name: terraform-run
-on: workflow_dispatch
+name: Terraform Init
+
+on:
+  push:
+    branches: [ "main" ]
 
 jobs:
-  terraform_run:   
-    runs-on: self-hosted
+  terraform_init:
+    runs-on: ubuntu-latest  # Or use 'self-hosted' if you have your own runner
+
     steps:
-      - uses: actions/checkout@v4  # Checkout the repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.6  # Or your preferred version
 
       - name: Terraform Init
         run: terraform init
