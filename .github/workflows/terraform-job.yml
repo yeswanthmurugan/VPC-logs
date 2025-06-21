@@ -1,0 +1,19 @@
+# This is a basic workflow to help you get started with Actions
+
+name: terraform-run
+on:
+  push:
+    branches: [ "main" ]    # Triggers the workflow on push or pull request events but only for the "main" branch
+jobs:
+  Terraform-run:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Terraform-init
+        run: terraform init
+
+      # Runs a set of commands using the runners shell
+      # - name: Run a multi-line script
+      #   run: |
+      #     echo Add other actions to build,
+      #     echo test, and deploy your project.
