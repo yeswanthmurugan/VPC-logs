@@ -1,13 +1,9 @@
 name: terraform-run
-
-on:
-  push:
-    branches: [ "main" ]  # Trigger on push to main branch
+on: workflow_dispatch
 
 jobs:
   terraform_run:   
     runs-on: self-hosted
-
     steps:
       - uses: actions/checkout@v4  # Checkout the repo
 
