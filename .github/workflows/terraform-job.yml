@@ -6,7 +6,7 @@ on:
 
 jobs:
   terraform_init:
-    runs-on: ubuntu-latest  # Or use 'self-hosted' if you have your own runner
+    runs-on: self-hosted  # Or use 'self-hosted' if you have your own runner
 
     steps:
       - name: Checkout repository
